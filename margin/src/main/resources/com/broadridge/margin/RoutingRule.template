@@ -1,0 +1,247 @@
+<rule>
+  <name>RoutingRule</name>
+  <modelVersion>1.0</modelVersion>
+  <attributes>
+    <attribute>
+      <attributeName>ruleflow-group</attributeName>
+      <value>routingRule</value>
+    </attribute>
+  </attributes>
+  <metadataList/>
+  <lhs>
+    <fact>
+      <constraintList>
+        <constraints>
+          <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+            <value>fromAccount</value>
+            <operator>&gt;</operator>
+            <constraintValueType>7</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>accountNumber</fieldName>
+            <fieldType>java.lang.Integer</fieldType>
+            <expLeftSide>
+              <parts>
+                <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <next class="field">
+                    <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                    <next class="field">
+                      <prev class="field" reference="../.."/>
+                      <name>accountNumber</name>
+                      <classType>java.lang.Integer</classType>
+                      <genericType>Integer</genericType>
+                    </next>
+                    <name>details</name>
+                    <classType>Details</classType>
+                    <genericType>Details</genericType>
+                  </next>
+                  <name>Account</name>
+                  <classType>Account</classType>
+                  <genericType>Account</genericType>
+                  <fact reference="../../../../../../.."/>
+                </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next/next"/>
+              </parts>
+            </expLeftSide>
+          </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+          <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+            <value>toAccount</value>
+            <operator>&lt;</operator>
+            <constraintValueType>7</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>accountNumber</fieldName>
+            <fieldType>java.lang.Integer</fieldType>
+            <expLeftSide>
+              <parts>
+                <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <next class="field">
+                    <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                    <next class="field">
+                      <prev class="field" reference="../.."/>
+                      <name>accountNumber</name>
+                      <classType>java.lang.Integer</classType>
+                      <genericType>Integer</genericType>
+                    </next>
+                    <name>details</name>
+                    <classType>Details</classType>
+                    <genericType>Details</genericType>
+                  </next>
+                  <name>Account</name>
+                  <classType>Account</classType>
+                  <genericType>Account</genericType>
+                  <fact reference="../../../../../../.."/>
+                </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next/next"/>
+              </parts>
+            </expLeftSide>
+          </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+          <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+            <value>fromBranch</value>
+            <operator>&gt;</operator>
+            <constraintValueType>7</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>branchNumber</fieldName>
+            <fieldType>java.lang.Integer</fieldType>
+            <expLeftSide>
+              <parts>
+                <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <next class="field">
+                    <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                    <next class="field">
+                      <prev class="field" reference="../.."/>
+                      <name>branchNumber</name>
+                      <classType>java.lang.Integer</classType>
+                      <genericType>Integer</genericType>
+                    </next>
+                    <name>details</name>
+                    <classType>Details</classType>
+                    <genericType>Details</genericType>
+                  </next>
+                  <name>Account</name>
+                  <classType>Account</classType>
+                  <genericType>Account</genericType>
+                  <fact reference="../../../../../../.."/>
+                </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next/next"/>
+              </parts>
+            </expLeftSide>
+          </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+          <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+            <value>toBranch</value>
+            <operator>&lt;</operator>
+            <constraintValueType>7</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>branchNumber</fieldName>
+            <fieldType>java.lang.Integer</fieldType>
+            <expLeftSide>
+              <parts>
+                <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <next class="field">
+                    <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                    <next class="field">
+                      <prev class="field" reference="../.."/>
+                      <name>branchNumber</name>
+                      <classType>java.lang.Integer</classType>
+                      <genericType>Integer</genericType>
+                    </next>
+                    <name>details</name>
+                    <classType>Details</classType>
+                    <genericType>Details</genericType>
+                  </next>
+                  <name>Account</name>
+                  <classType>Account</classType>
+                  <genericType>Account</genericType>
+                  <fact reference="../../../../../../.."/>
+                </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next/next"/>
+              </parts>
+            </expLeftSide>
+          </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+        </constraints>
+      </constraintList>
+      <factType>Account</factType>
+      <isNegated>false</isNegated>
+      <window>
+        <parameters/>
+      </window>
+    </fact>
+    <fact>
+      <constraintList>
+        <constraints/>
+      </constraintList>
+      <factType>UserInfo</factType>
+      <boundName>usr</boundName>
+      <isNegated>false</isNegated>
+      <window>
+        <parameters/>
+      </window>
+    </fact>
+  </lhs>
+  <rhs>
+    <setField>
+      <fieldValues>
+        <fieldValue>
+          <field>userId</field>
+          <value>user</value>
+          <nature>7</nature>
+          <type>String</type>
+        </fieldValue>
+      </fieldValues>
+      <variable>usr</variable>
+    </setField>
+    <freeForm>
+      <text>System.out.println(&quot;routing rule fired&quot;);</text>
+    </freeForm>
+  </rhs>
+  <imports>
+    <imports>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>com.broadridge.business.domain.Account</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>com.broadridge.business.domain.Details</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+    </imports>
+  </imports>
+  <packageName>com.broadridge.margin</packageName>
+  <isNegated>false</isNegated>
+  <table>
+    <entry>
+      <string>__ID_KOL_NAME__</string>
+      <list>
+        <string>1</string>
+      </list>
+    </entry>
+    <entry>
+      <string>toAccount</string>
+      <list>
+        <string>10000</string>
+      </list>
+    </entry>
+    <entry>
+      <string>fromBranch</string>
+      <list>
+        <string>99</string>
+      </list>
+    </entry>
+    <entry>
+      <string>toBranch</string>
+      <list>
+        <string>101</string>
+      </list>
+    </entry>
+    <entry>
+      <string>fromAccount</string>
+      <list>
+        <string>0</string>
+      </list>
+    </entry>
+    <entry>
+      <string>user</string>
+      <list>
+        <string>User1</string>
+      </list>
+    </entry>
+  </table>
+  <idCol>1</idCol>
+  <rowsCount>1</rowsCount>
+</rule>

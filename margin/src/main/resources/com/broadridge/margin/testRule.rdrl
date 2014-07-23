@@ -1,0 +1,9 @@
+package com.broadridge.margin;
+
+import java.lang.Number;
+
+rule "testRule"
+	dialect "mvel"
+	when
+	then
+end

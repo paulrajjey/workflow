@@ -1,0 +1,20 @@
+package com.broadridge.margin;
+
+import java.lang.Number;
+import com.broadridge.business.domain.Account;
+import com.broadridge.business.domain.ExistingCallDetails;
+import com.broadridge.business.domain.Call;
+import com.broadridge.business.domain.Trade;
+
+rule "Rule2-calculateAge-FedCall"
+	dialect "mvel"
+	lock-on-active true
+	ruleflow-group "calculateage"
+	when
+		Account( existingCallDetails != null , callDetailsFed : existingCallDetails.call != null , balances != null , balances.currency != null , balances.currency.marginBalances != null , balances.currency.marginBalances != null , balances.currency.isoCode == "USD" , balances.currency != null , balances.currency != null , balances.currency.marginBalances.balanceDay.balanceType == "Fed" , balances.currency.marginBalances.balanceDay.day == 1I , balances != null , balances != null , balances != null )
+		fedCall : Call( callType == "Fed Call" , callAge : age) from callDetailsFed
+	then
+		System.out.println("Rule 2 fired");
+		System.out.println("rule2 processed");
+		fedCall.setAge( callAge+1 );
+end

@@ -1,0 +1,24 @@
+package com.broadridge.margin;
+
+import java.lang.Number;
+import com.broadridge.business.domain.Account;
+import com.broadridge.business.domain.Balances;
+import com.broadridge.business.domain.Currency;
+import com.broadridge.business.domain.MarginBalances;
+import com.broadridge.business.domain.BalanceDay;
+import com.broadridge.business.domain.Call;
+
+rule "Rule4-FedBusinessRule"
+	dialect "mvel"
+	ruleflow-group "businessRule"
+	when
+		Account( balances.currency.isoCode == "USD" )
+		Account( balances != null , curr : balances.currency != null , MMF : balances.currency.moneyMarketFundMMF != null )
+		Account( balances != null , balances.currency != null , balances.currency.marginBalances != null , bal : balances.currency.marginBalances.balanceDay != null , callAmount : balances.currency.marginBalances.balanceDay.callAmount != null )
+		acctctx : AccountContext( )
+	then
+		curr.subTrackMMF( callAmount );
+		bal.subTractCallAmmount( callAmount );
+		System.out.println("Rule-FedBusinessRuleFired");
+		acctctx.setBusinessRuleFedStatus( "Resolved" );
+end

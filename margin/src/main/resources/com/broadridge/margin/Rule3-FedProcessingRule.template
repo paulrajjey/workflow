@@ -1,0 +1,439 @@
+<rule>
+  <name>Rule3-FedProcessingRule</name>
+  <modelVersion>1.0</modelVersion>
+  <attributes>
+    <attribute>
+      <attributeName>ruleflow-group</attributeName>
+      <value>processrule</value>
+    </attribute>
+  </attributes>
+  <metadataList/>
+  <lhs>
+    <fact>
+      <constraintList>
+        <constraints>
+          <fieldConstraint>
+            <operator>!= null</operator>
+            <constraintValueType>0</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>balances</fieldName>
+            <fieldType>Balances</fieldType>
+          </fieldConstraint>
+          <fieldConstraint>
+            <operator>!= null</operator>
+            <constraintValueType>0</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>currency</fieldName>
+            <fieldType>Currency</fieldType>
+            <parent class="fieldConstraint" reference="../../fieldConstraint"/>
+          </fieldConstraint>
+          <fieldConstraint>
+            <operator>!= null</operator>
+            <constraintValueType>0</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>marginBalances</fieldName>
+            <fieldType>MarginBalances</fieldType>
+            <parent class="fieldConstraint" reference="../../fieldConstraint[2]"/>
+          </fieldConstraint>
+          <fieldConstraint>
+            <operator>!= null</operator>
+            <constraintValueType>0</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>balanceDay</fieldName>
+            <fieldType>com.broadridge.business.domain.BalanceDay</fieldType>
+            <parent class="fieldConstraint" reference="../../fieldConstraint[3]"/>
+          </fieldConstraint>
+          <fieldConstraint>
+            <value>1</value>
+            <operator>==</operator>
+            <constraintValueType>1</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>day</fieldName>
+            <fieldType>BigInteger</fieldType>
+            <parent class="fieldConstraint" reference="../../fieldConstraint[4]"/>
+          </fieldConstraint>
+          <fieldConstraint>
+            <value>Fed</value>
+            <operator>==</operator>
+            <constraintValueType>1</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>balanceType</fieldName>
+            <fieldType>String</fieldType>
+            <parent class="fieldConstraint" reference="../../fieldConstraint[4]"/>
+          </fieldConstraint>
+          <fieldConstraint>
+            <operator>!= null</operator>
+            <constraintValueType>0</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>existingCallDetails</fieldName>
+            <fieldType>com.broadridge.business.domain.ExistingCallDetails</fieldType>
+          </fieldConstraint>
+          <fieldConstraint>
+            <operator>!= null</operator>
+            <constraintValueType>0</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <fieldBinding>fedCall</fieldBinding>
+            <factType>Account</factType>
+            <fieldName>call</fieldName>
+            <fieldType>Collection</fieldType>
+            <parent class="fieldConstraint" reference="../../fieldConstraint[7]"/>
+          </fieldConstraint>
+          <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+            <value>fromBranch</value>
+            <operator>&gt;</operator>
+            <constraintValueType>7</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>branchNumber</fieldName>
+            <fieldType>java.lang.Integer</fieldType>
+            <expLeftSide>
+              <parts>
+                <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <next class="field">
+                    <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                    <next class="field">
+                      <prev class="field" reference="../.."/>
+                      <name>branchNumber</name>
+                      <classType>java.lang.Integer</classType>
+                      <genericType>Integer</genericType>
+                    </next>
+                    <name>details</name>
+                    <classType>com.broadridge.business.domain.Details</classType>
+                    <genericType>com.broadridge.business.domain.Details</genericType>
+                  </next>
+                  <name>Account</name>
+                  <classType>Account</classType>
+                  <genericType>Account</genericType>
+                  <fact reference="../../../../../../.."/>
+                </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next/next"/>
+              </parts>
+            </expLeftSide>
+          </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+          <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+            <value>toBranch</value>
+            <operator>&lt;</operator>
+            <constraintValueType>7</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>branchNumber</fieldName>
+            <fieldType>java.lang.Integer</fieldType>
+            <expLeftSide>
+              <parts>
+                <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <next class="field">
+                    <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                    <next class="field">
+                      <prev class="field" reference="../.."/>
+                      <name>branchNumber</name>
+                      <classType>java.lang.Integer</classType>
+                      <genericType>Integer</genericType>
+                    </next>
+                    <name>details</name>
+                    <classType>com.broadridge.business.domain.Details</classType>
+                    <genericType>com.broadridge.business.domain.Details</genericType>
+                  </next>
+                  <name>Account</name>
+                  <classType>Account</classType>
+                  <genericType>Account</genericType>
+                  <fact reference="../../../../../../.."/>
+                </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next/next"/>
+              </parts>
+            </expLeftSide>
+          </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+          <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+            <value>fromAccount</value>
+            <operator>&gt;</operator>
+            <constraintValueType>7</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>accountNumber</fieldName>
+            <fieldType>java.lang.Integer</fieldType>
+            <expLeftSide>
+              <parts>
+                <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <next class="field">
+                    <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                    <next class="field">
+                      <prev class="field" reference="../.."/>
+                      <name>accountNumber</name>
+                      <classType>java.lang.Integer</classType>
+                      <genericType>Integer</genericType>
+                    </next>
+                    <name>details</name>
+                    <classType>com.broadridge.business.domain.Details</classType>
+                    <genericType>com.broadridge.business.domain.Details</genericType>
+                  </next>
+                  <name>Account</name>
+                  <classType>Account</classType>
+                  <genericType>Account</genericType>
+                  <fact reference="../../../../../../.."/>
+                </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next/next"/>
+              </parts>
+            </expLeftSide>
+          </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+          <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+            <value>toAccount</value>
+            <operator>&lt;</operator>
+            <constraintValueType>7</constraintValueType>
+            <expression>
+              <parts/>
+            </expression>
+            <parameters/>
+            <factType>Account</factType>
+            <fieldName>accountNumber</fieldName>
+            <fieldType>java.lang.Integer</fieldType>
+            <expLeftSide>
+              <parts>
+                <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <next class="field">
+                    <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                    <next class="field">
+                      <prev class="field" reference="../.."/>
+                      <name>accountNumber</name>
+                      <classType>java.lang.Integer</classType>
+                      <genericType>Integer</genericType>
+                    </next>
+                    <name>details</name>
+                    <classType>com.broadridge.business.domain.Details</classType>
+                    <genericType>com.broadridge.business.domain.Details</genericType>
+                  </next>
+                  <name>Account</name>
+                  <classType>Account</classType>
+                  <genericType>Account</genericType>
+                  <fact reference="../../../../../../.."/>
+                </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next/next"/>
+              </parts>
+            </expLeftSide>
+          </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+        </constraints>
+      </constraintList>
+      <factType>Account</factType>
+      <isNegated>false</isNegated>
+      <window>
+        <parameters/>
+      </window>
+    </fact>
+    <fromCompositePattern>
+      <factPattern>
+        <constraintList>
+          <constraints>
+            <fieldConstraint>
+              <value>Fed Call</value>
+              <operator>==</operator>
+              <constraintValueType>1</constraintValueType>
+              <expression>
+                <parts/>
+              </expression>
+              <parameters/>
+              <factType>Call</factType>
+              <fieldName>callType</fieldName>
+              <fieldType>String</fieldType>
+            </fieldConstraint>
+            <org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+              <value>thresoldAmount</value>
+              <operator>&gt;=</operator>
+              <constraintValueType>7</constraintValueType>
+              <expression>
+                <parts/>
+              </expression>
+              <parameters/>
+              <fieldName>callAmount</fieldName>
+              <fieldType>java.math.BigDecimal</fieldType>
+              <expLeftSide>
+                <parts>
+                  <org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                    <next class="field">
+                      <prev class="org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact" reference="../.."/>
+                      <name>callAmount</name>
+                      <classType>java.math.BigDecimal</classType>
+                      <genericType>BigDecimal</genericType>
+                    </next>
+                    <name>Call</name>
+                    <classType>Call</classType>
+                    <genericType>Call</genericType>
+                    <fact reference="../../../../../../.."/>
+                  </org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact>
+                  <field reference="../org.drools.workbench.models.datamodel.rule.ExpressionUnboundFact/next"/>
+                </parts>
+              </expLeftSide>
+            </org.drools.workbench.models.datamodel.rule.SingleFieldConstraintEBLeftSide>
+          </constraints>
+        </constraintList>
+        <factType>Call</factType>
+        <boundName>call</boundName>
+        <isNegated>false</isNegated>
+        <window>
+          <parameters/>
+        </window>
+      </factPattern>
+      <expression>
+        <parts>
+          <org.drools.workbench.models.datamodel.rule.ExpressionFieldVariable>
+            <name>fedCall</name>
+            <classType>Collection</classType>
+            <genericType>Collection</genericType>
+          </org.drools.workbench.models.datamodel.rule.ExpressionFieldVariable>
+        </parts>
+      </expression>
+    </fromCompositePattern>
+    <fact>
+      <factType>AccountContext</factType>
+      <boundName>accountCtx</boundName>
+      <isNegated>false</isNegated>
+      <window>
+        <parameters/>
+      </window>
+    </fact>
+  </lhs>
+  <rhs>
+    <setField>
+      <fieldValues>
+        <fieldValue>
+          <field>callAmount</field>
+          <value>thresoldAmount</value>
+          <nature>7</nature>
+          <type>BigDecimal</type>
+        </fieldValue>
+        <fieldValue>
+          <field>callStatus</field>
+          <value>LOAD</value>
+          <nature>1</nature>
+          <type>String</type>
+        </fieldValue>
+      </fieldValues>
+      <variable>call</variable>
+    </setField>
+    <setField>
+      <fieldValues>
+        <fieldValue>
+          <field>fedCallStatus</field>
+          <value>LOAD</value>
+          <nature>1</nature>
+          <type>String</type>
+        </fieldValue>
+      </fieldValues>
+      <variable>accountCtx</variable>
+    </setField>
+    <freeForm>
+      <text>System.out.println(&quot;Fed process rule fired&quot;);</text>
+    </freeForm>
+  </rhs>
+  <imports>
+    <imports>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>com.broadridge.business.domain.Account</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>com.broadridge.business.domain.MarginBalances</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>com.broadridge.business.domain.Balances</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>com.broadridge.business.domain.Currency</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>com.broadridge.business.domain.DiamentionSetup</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+      <org.drools.workbench.models.datamodel.imports.Import>
+        <type>com.broadridge.business.domain.Call</type>
+      </org.drools.workbench.models.datamodel.imports.Import>
+    </imports>
+  </imports>
+  <packageName>com.broadridge.margin</packageName>
+  <isNegated>false</isNegated>
+  <table>
+    <entry>
+      <string>thresoldAmount</string>
+      <list>
+        <string>100</string>
+        <string>1000</string>
+      </list>
+    </entry>
+    <entry>
+      <string>__ID_KOL_NAME__</string>
+      <list>
+        <string>2</string>
+        <string>0</string>
+      </list>
+    </entry>
+    <entry>
+      <string>fromBranch</string>
+      <list>
+        <string>300</string>
+        <string>99</string>
+      </list>
+    </entry>
+    <entry>
+      <string>toAccount</string>
+      <list>
+        <string>10000</string>
+        <string>10000</string>
+      </list>
+    </entry>
+    <entry>
+      <string>toBranch</string>
+      <list>
+        <string>601</string>
+        <string>301</string>
+      </list>
+    </entry>
+    <entry>
+      <string>fromAccount</string>
+      <list>
+        <string>0</string>
+        <string>0</string>
+      </list>
+    </entry>
+  </table>
+  <idCol>2</idCol>
+  <rowsCount>2</rowsCount>
+</rule>

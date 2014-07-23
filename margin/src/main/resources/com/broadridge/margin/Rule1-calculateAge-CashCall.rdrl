@@ -1,0 +1,21 @@
+package com.broadridge.margin;
+
+import java.lang.Number;
+import com.broadridge.business.domain.Account;
+import com.broadridge.business.domain.AccountNumber;
+import com.broadridge.business.domain.Call;
+import com.broadridge.business.domain.ExistingCallDetails;
+import com.broadridge.business.domain.Age;
+import com.broadridge.business.domain.CallStatus;
+
+rule "Rule1-calculateAge-CashCall"
+	dialect "mvel"
+	ruleflow-group "calculateage"
+	when
+		Account( existingCallDetails != null , calldetails : existingCallDetails.call != null , trades != null , trades.CAMSTrade != null , trades.CAMSTrade.ddInException == "001" , trades.CAMSTrade.camsFlag == "04" )
+		cashcall : Call( callType == "Cash Call" ) from calldetails
+	then
+		System.out.println("Rule1 fired");
+		cashcall.setAge( 1 );
+		cashcall.setCallStatus( "Resolved" );
+end
